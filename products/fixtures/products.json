@@ -1,0 +1,106 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "0725765228017",
+      "name": "Osip Mineral Water",
+      "description": "Natural mineral water sourced from pristine springs, rich in essential minerals for optimal hydration. Crisp, clean taste with a perfect balance of electrolytes—great for health and vitality.",
+      "price": 1.99,
+      "category": 2,
+      "image_url": "/media/osipwater.jpg",
+      "image": "osipwater.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "0725765228018",
+      "name": "Mango Juice",
+      "description": "Sweet, tropical mango goodness in every sip! Made from ripe, juicy mangoes for a refreshing, vitamin-packed drink. Perfect for summer days!",
+      "price": 2.49,
+      "category": 1,
+      "image_url": "/media/mango.jpg",
+      "image": "mango.jpg"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "0725765228019",
+      "name": "Apple Juice",
+      "description": "100% pure apple juice—naturally sweet with no added sugar. A healthy, energizing drink full of antioxidants and freshness.",
+      "price": 2.29,
+      "category": 1,
+      "image_url": "/media/apple.jpg",
+      "image": "apple.jpg"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "0725765228020",
+      "name": "Lychee Juice",
+      "description": "Delicate, floral lychee flavor with a hint of sweetness. Packed with vitamin C for a hydrating, exotic treat.",
+      "price": 2.99,
+      "category": 1,
+      "image_url": "/media/lychee.jpg",
+      "image": "lychee.jpg"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "0725765245019",
+      "name": "Triangle",
+      "description": "Golden, crispy triangles—lightly seasoned for a satisfying crunch. Ideal with dips or solo!",
+      "price": 1.79,
+      "category": 3,
+      "image_url": "/media/triangles.jpg",
+      "image": "triangles.jpg"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "0725765228021",
+      "name": "Slanty",
+      "description": "Irresistibly crunchy and lightly salted. The perfect savory snack for movie nights or on-the-go munching.",
+      "price": 1.79,
+      "category": 3,
+      "image_url": "/media/slanty.jpg",
+      "image": "slanty.jpg"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "0725765228023",
+      "name": "Lemon Kurkure",
+      "description": "Tangy lemon and spicy kick in every crunchy bite. A bold snack for flavor adventurers!",
+      "price": 1.69,
+      "category": 3,
+      "image_url": "/media/lemon.jpg",
+      "image": "lemon.jpg"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+      "sku": "00000000",
+      "name": "Coming Soon",
+      "description": "These products are coming soon",
+      "price": 0.00,
+      "category": 4,
+      "image_url": "/media/tetra.jpg",
+      "image": "tetra.jpg"
+    }
+  }
+]

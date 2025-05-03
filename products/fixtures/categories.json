@@ -1,0 +1,7 @@
+[{"pk": 1, "model": "products.category", "fields": {"name": "juices", "friendly_name": "Juices"}}, 
+
+{"pk": 2, "model": "products.category", "fields": {"name": "mineral_water", "friendly_name": "Mineral Water"}}, 
+
+{"pk": 3, "model": "products.category", "fields": {"name": "snacks", "friendly_name": "Snacks"}}, 
+
+{"pk": 4, "model": "products.category", "fields": {"name": "coming_soon", "friendly_name": "Coming Soon"}}]
