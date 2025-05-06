@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-_(7lu6m!d%^83h4z*!ti8s*qqkg(b=@hf-std!f8!(zu+r7p0c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-belawal-ovellap5-znl81wzhe2e.ws-us118.gitpod.io']
+ALLOWED_HOSTS = ['8000-belawal-ovellap5-g05qeqslouz.ws-us118.gitpod.io']
 
 # NEW SETTINGS TO ADD (CSRF and Security)
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-belawal-ovellap5-znl81wzhe2e.ws-us118.gitpod.io',
+    'https://8000-belawal-ovellap5-g05qeqslouz.ws-us118.gitpod.io',
     'https://*.gitpod.io'  # Wildcard for all Gitpod subdomains
 ]
 
