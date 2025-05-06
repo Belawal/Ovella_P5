@@ -6,8 +6,8 @@
                 Beverages
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="beverages-link">
-                <a href="" class="dropdown-item">Juices</a>
-                <a href="" class="dropdown-item">Mineral Water</a>
+                <a href="{% url 'products' %}?category=juices" class="dropdown-item">Juices</a>
+                <a href="{% url 'products' %}?category=	mineral_water" class="dropdown-item">Mineral Water</a>
             </div>
         </li>
 
@@ -16,7 +16,7 @@
                 Snacks
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="snacks-link">
-                <a href="" class="dropdown-item">Snacks</a>
+                <a href="{% url 'products' %}?category=snacks" class="dropdown-item">Snacks</a>
             </div>
         </li>
 
@@ -25,7 +25,7 @@
                 Coming Soon
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="comingSoon-link">
-                <a href="" class="dropdown-item">Coming Soon</a>
+                <a href="{% url 'products' %}?category=coming_soon" class="dropdown-item">Coming Soon</a>
             </div>
         </li>
     </ul>
