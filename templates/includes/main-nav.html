@@ -1,30 +1,44 @@
+<!-- Main navigation bar menu (centered horizontally) -->
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
 
+        <!-- Beverages dropdown menu -->
         <li class="nav-item dropdown">
+            <!-- Main link user clicks to open dropdown -->
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="beverages-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Beverages
             </a>
+            <!-- Dropdown menu under "Beverages" -->
             <div class="dropdown-menu border-0" aria-labelledby="beverages-link">
+                <!-- Link to Juices category -->
                 <a href="{% url 'products' %}?category=juices" class="dropdown-item">Juices</a>
+                <!-- Link to Mineral Water category -->
                 <a href="{% url 'products' %}?category=	mineral_water" class="dropdown-item">Mineral Water</a>
             </div>
         </li>
 
+        <!-- Snacks dropdown menu -->
         <li class="nav-item dropdown">
+            <!-- Main link for "Snacks" -->
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="snacks-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Snacks
             </a>
+            <!-- Dropdown menu under "Snacks" -->
             <div class="dropdown-menu border-0" aria-labelledby="snacks-link">
+                <!-- Link to Snacks category -->
                 <a href="{% url 'products' %}?category=snacks" class="dropdown-item">Snacks</a>
             </div>
         </li>
 
+        <!-- Coming Soon dropdown menu -->
         <li class="nav-item dropdown">
+            <!-- Main link for "Coming Soon" -->
             <a class="logo-font font-weight-bold nav-link text-black" href="#" id="comingSoon-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Coming Soon
             </a>
+            <!-- Dropdown menu under "Coming Soon" -->
             <div class="dropdown-menu border-0" aria-labelledby="comingSoon-link">
+                <!-- Link to Coming Soon category -->
                 <a href="{% url 'products' %}?category=coming_soon" class="dropdown-item">Coming Soon</a>
             </div>
         </li>
