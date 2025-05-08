@@ -54,7 +54,7 @@
 <!-- Mobile shopping bag icon with total price -->
 <li class="list-inline-item">
     <!-- Shopping bag icon shows on mobile, with total price if any -->
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'bag:view_bag' %}">
+    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
         <div class="text-center">
             <div><i class="fas fa-shopping-bag fa-lg"></i></div> <!-- Shopping bag icon -->
             <p class="my-0">
