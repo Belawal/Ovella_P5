@@ -1,43 +1,50 @@
+/* Make the html element take up full height */
 html {
     height: 100%;
 }
 
+/* Style the body with a full-screen background image */
 body {
     background: url('/media/homepage_background1.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Lato';
+    height: calc(100vh - 164px); 
+    color: #555; /
+    font-family: 'Lato'; 
 }
 
-/* from Bulma */
+/* Style for icon containers (from Bulma CSS framework) */
 .icon {
     align-items: center;
-    display: inline-flex;
-    justify-content: center;
+    display: inline-flex; 
+    justify-content: center; 
     height: 1.5rem;
     width: 1.5rem;
 }
 
+/* Makes logo font all uppercase letters */
 .logo-font {
     text-transform: uppercase;
 }
 
+/* Makes logo container adjust to fit its content */
 .main-logo-link {
     width: fit-content;
 }
 
+/* Style for the big Buy Now button */
 .buy-now-button {
     background: black;
     color: white;
     min-width: 260px;
 }
 
+/* Style for reusable black buttons */
 .btn-black {
     background: black;
     color: white;
 }
 
+/* Hover/focus styles for Buy Now and Black buttons */
 .buy-now-button:hover,
 .buy-now-button:active,
 .buy-now-button:focus,
@@ -48,33 +55,52 @@ body {
     color: white;
 }
 
+/* Outline-style black button */
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    border: 1px solid black;
+}
+
+/* Hover/focus styles for outline button */
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
+/* Force text color to be black */
 .text-black {
     color: #000 !important;
 }
 
+/* Add solid black border */
 .border-black {
     border: 1px solid black !important;
 }
 
+/* Yellow overlay background behind everything */
 .overlay {
 	height: 100%;
 	width: 100%;
 	top: 0;
 	left: 0;
-	position: fixed;
-	background: rgb(240, 207, 76);
-	z-index: -1;
+	position: fixed; /* Fixed in place */
+	background: rgb(240, 207, 76); /* Yellow color */
+	z-index: -1; /* Send it behind other elements */
 }
-/* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
+/* - Media Queries (Responsive Design) */
+
+/* Make container wider on extra large screens */
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
 }
 
-/* fixed top navbar only on medium and up */
+/* Apply fixed top navbar only on medium screens and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -84,6 +110,7 @@ body {
         z-index: 1030;
     }
 
+    /* Adds spacing below the navbar */
     .header-container {
         padding-top: 164px;
     }

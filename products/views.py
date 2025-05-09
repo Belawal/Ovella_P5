@@ -2,15 +2,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 
 # Importing models that we will use in this file
 from .models import Product, Category
 
-# ----------------------------
 # Show all products page
 # This page shows all items in the shop
-# It also lets user search or filter by category
-# ----------------------------
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
     products = Product.objects.all()
@@ -42,10 +40,8 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
-# ----------------------------
 # Show one product page
 # This page opens when user clicks a product
-# ----------------------------
 def product_detail(request, product_id):
     """ A view to show individual product details """
     product = get_object_or_404(Product, pk=product_id) # Get the product or show 404 error
