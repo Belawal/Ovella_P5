@@ -1,60 +1,104 @@
+{# Inherit from the base template to keep a consistent layout #}
 {% extends "base.html" %}
-{% load static %}
+{% load static %}  {# Load static files support #}
 
+{# Start of the header block (empty in this case, but keeping layout structure) #}
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col"></div>
+        <div class="col"></div>  {# Empty column to hold space in the header #}
     </div>
 </div>
 {% endblock %}
 
+{# Main content of the shopping bag page #}
 {% block content %}
-<div class="overlay"></div>
-<div class="container mb-2">
+<div class="overlay"></div>  {# Transparent overlay, usually for styling #}
+<div class="container mb-2">  {# Main container with bottom margin #}
     <div class="row">
         <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Shopping Bag</h2>
+            <hr>  {# line for separation #}
+            <h2 class="logo-font mb-4">Shopping Bag</h2>  {# Title of the page #}
             <hr>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            {% if bag_items %}
+            {% if bag_items %}  {# If there are items in the bag, show them in a table #}
             <div class="table-responsive rounded">
-                <table class="table table-sm table-borderless">
+                <table class="table table-sm table-borderless">  {# Responsive table with no borders #}
                     <thead class="text-black">
                         <tr>
                             <th scope="col">Product Info</th>
-                            <th scope="col"></th>
+                            <th scope="col"></th>  {# Empty column for layout #}
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
                         </tr>
                     </thead>
 
+                    {# Loop through all items in the bag #}
                     {% for item in bag_items %}
                     <tr>
                         <td class="p-3 w-25">
-                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">  {# Product image #}
                         </td>
                         <td class="py-3">
-                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>  {# Product name #}
+                            <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>  {# Product SKU in uppercase #}
                         </td>
                         <td class="py-3">
-                            <p class="my-0">${{ item.product.price }}</p>
+                            <p class="my-0">${{ item.product.price }}</p>  {# Product price #}
                         </td>
                         <td class="py-3 w-25">
-                            <p class="my-0">{{ item.quantity }}</p>
+                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                {% csrf_token %}  {# Security token #}
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        {# Button to decrease quantity #}
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                <span>
+                                                    <i class="fas fa-minus fa-sm"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+
+                                        {# Input field for quantity #}
+                                        <input class="form-control form-control-sm qty_input" type="number"
+                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+
+                                        {# Button to increase quantity #}
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                <span>
+                                                    <i class="fas fa-plus fa-sm"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                            {# Link to update the quantity #}
+                            <a href="#" class="update-link text-info"><small>Update</small></a>
+                            {# Link to remove the item from the bag #}
+                            <a href="#" class="remove-item text-danger float-right"
+                                 id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                            </div>
                         </td>
+
                         <td class="py-3">
-                            <p class="my-0">${{ item.product.price }}</p>
+                            <p class="my-0">${{ item.product.price }}</p>  {# Subtotal (same as price unless quantity > 1) #}
                         </td>
                     </tr>
                     {% endfor %}
+
+                    {# Total row showing the final price of all items #}
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
                             <h4 class="mt-4"><strong>Total: ${{ total|floatformat:2 }}</strong></h4>
@@ -62,12 +106,12 @@
                     </tr>
                 </table>
             </div>
-            
-            {% else %}
+
+            {% else %}  {# If the bag is empty, show message and link #}
             <p class="lead mb-5">Your bag is empty.</p>
             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                 <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
+                    <i class="fas fa-chevron-left"></i>  {# Left arrow icon #}
                 </span>
                 <span class="text-uppercase">Keep Shopping</span>
             </a>
@@ -75,4 +119,29 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+        
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}
