@@ -1,1 +1,1 @@
-web: gunicorn ovella_online.wsgil:application
+web: gunicorn OVELLA_P5.wsgi:applicationGIT
