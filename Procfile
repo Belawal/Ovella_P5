@@ -1,0 +1,1 @@
+web: gunicorn ovella_online.wsgil:application

@@ -106,6 +106,12 @@
             </tr>
             </table>
         </div>
+        <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+            <span class="text-uppercase">Secure Checkout</span>
+            <span class="icon">
+                <i class="fas fa-lock"></i>
+            </span>
+        </a>
         {% else %} {# If the bag is empty, show message and link #}
         <p class="lead mb-5">Your bag is empty.</p>
         <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
@@ -113,12 +119,6 @@
                 <i class="fas fa-chevron-left"></i> {# Left arrow icon #}
             </span>
             <span class="text-uppercase">Keep Shopping</span>
-        </a>
-        <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-            <span class="text-uppercase">Secure Checkout</span>
-            <span class="icon">
-                <i class="fas fa-lock"></i>
-            </span>
         </a>
         </td>
         </tr>

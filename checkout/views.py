@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from .forms import OrderForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def checkout(request):
     bag = request.session.get('bag', {})
     if not bag:
