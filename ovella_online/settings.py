@@ -28,7 +28,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-belawal-ovellap5-g05qeqslouz.ws-us118.gitpod.io']
+ALLOWED_HOSTS = [
+    '8000-belawal-ovellap5-g05qeqslouz.ws-us118.gitpod.io',
+    'ovella-p5-da2609802d2f.herokuapp.com/',
+]
 
 # NEW SETTINGS TO ADD (CSRF and Security)
 CSRF_TRUSTED_ORIGINS = [
