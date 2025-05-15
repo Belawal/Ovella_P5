@@ -30,7 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-belawal-ovellap5-g05qeqslouz.ws-us118.gitpod.io',
-    'ovella-p5-da2609802d2f.herokuapp.com/',
+    'ovella-p5-da2609802d2f.herokuapp.com',
+    
 ]
 
 # NEW SETTINGS TO ADD (CSRF and Security)
