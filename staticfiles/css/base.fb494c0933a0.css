@@ -1,0 +1,203 @@
+/* Make the html element take up full height */
+html {
+    height: 100%;
+}
+
+/* Style the body with a full-screen background image */
+body {
+    background: url('/media/homepage_background1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px); 
+    color: #555; /
+    font-family: 'Lato'; 
+}
+
+/* Style for icon containers (from Bulma CSS framework) */
+.icon {
+    align-items: center;
+    display: inline-flex; 
+    justify-content: center; 
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Makes logo font all uppercase letters */
+.logo-font {
+    text-transform: uppercase;
+}
+
+/* Makes logo container adjust to fit its content */
+.main-logo-link {
+    width: fit-content;
+}
+
+/* Style for the big Buy Now button */
+.buy-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+/* Style for reusable black buttons */
+.btn-black {
+    background: black;
+    color: white;
+}
+
+/* Hover/focus styles for Buy Now and Black buttons */
+.buy-now-button:hover,
+.buy-now-button:active,
+.buy-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+/* Outline-style black button */
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    border: 1px solid black;
+}
+
+/* Hover/focus styles for outline button */
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
+/* Force text color to be black */
+.text-black {
+    color: #000 !important;
+}
+
+/* Add solid black border */
+.border-black {
+    border: 1px solid black !important;
+}
+
+/* Yellow overlay background behind everything */
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed; /* Fixed in place */
+	background: rgb(240, 207, 76); /* Yellow color */
+	z-index: -1; /* Send it behind other elements */
+}
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
+}
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+/* bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* - Media Queries (Responsive Design) */
+
+/* Make container wider on extra large screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* Apply fixed top navbar only on medium screens and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    /* Adds spacing below the navbar */
+    .header-container {
+        padding-top: 164px;
+    }
+}
