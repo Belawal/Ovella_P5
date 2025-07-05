@@ -26,10 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-belawal-ovellap5-g05qeqslouz.ws-us118.gitpod.io',
+    '8000-belawal-ovellap5-v8e1spllhtb.ws-us120.gitpod.io',
     'ovella-p5-da2609802d2f.herokuapp.com',
     
 ]
