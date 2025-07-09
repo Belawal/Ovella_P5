@@ -1,9 +1,12 @@
 {% load static %}
 
+
 <!doctype html>
 <html lang="en">
 
+
 <head>
+
 
   {% block meta %}
   <meta charset="utf-8">
@@ -11,8 +14,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   {% endblock %}
 
+
   {% block extra_meta %}
   {% endblock %}
+
 
   {% block corecss %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -21,12 +26,16 @@
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap">
   <link rel="stylesheet" href="{% static 'css/base.css' %}?v=7">
 
+
   {% endblock %}
+
 
   {% block extra_css %}
   {% endblock %}
 
+
   {% block corejs %}
+
 
   <script src="https://kit.fontawesome.com/204be068aa.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -41,11 +50,14 @@
    <script src="https://js.stripe.com/basil/stripe.js" async></script>
   {% endblock %}
 
+
   {% block extra_js %}
   {% endblock %}
 
+
   <title>Ovella {% block extra_title %}{% endblock %}</title>
 </head>
+
 
 <body>
   <header class="container-fluid fixed-top">
@@ -123,6 +135,7 @@
     </div>
   </header>
 
+
   {% if messages %}
   <div class="message-container">
     {% for message in messages %}
@@ -139,24 +152,25 @@
     {% endwith %}
     {% endfor %}
   </div>
-    {% endif %}
+  {% endif %}
 
-    {% block page_header %}
-    {%endblock %}
 
-<main class="main-content">
-  <div class="content-box container">
-    {% block content %}
-    {% endblock %}
-  </div>
-</main>
+  {% block page_header %}
+  {%endblock %}
 
-   {% block postloadjs %}
+
+  {% block content %}
+  {% endblock %}
+
+
+  {% block postloadjs %}
   <script type="text/javascript">
     $('.toast').toast('show');
   </script>
   {% endblock %}
 
+
 </body>
+
 
 </html>

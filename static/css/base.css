@@ -3,57 +3,38 @@ html {
     height: 100%;
 }
 
+
 /* Style the body with a full-screen background image */
 body {
     background: url('/media/homepage_background1.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px); 
+    height: calc(100vh - 164px);
     color: #555; /
-    font-family: 'Lato'; 
+    font-family: 'Lato';
 }
 
-.main-content {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-    padding: 20px 0;
-    min-height: calc(100vh - 164px); /* Match your body height calculation */
-}
-
-.content-box {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 1200px;
-    position: relative;
-    z-index: 1;
-}
-
-.full-width-content {
-    max-width: 100%;
-    padding: 0;
-    box-shadow: none;
-    background: transparent;
-}
 
 /* Style for icon containers (from Bulma CSS framework) */
 .icon {
     align-items: center;
-    display: inline-flex; 
-    justify-content: center; 
+    display: inline-flex;
+    justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
 }
+
 
 /* Makes logo font all uppercase letters */
 .logo-font {
     text-transform: uppercase;
 }
 
+
 /* Makes logo container adjust to fit its content */
 .main-logo-link {
     width: fit-content;
 }
+
 
 /* Style for the big Buy Now button */
 .buy-now-button {
@@ -62,11 +43,13 @@ body {
     min-width: 260px;
 }
 
+
 /* Style for reusable black buttons */
 .btn-black {
     background: black;
     color: white;
 }
+
 
 /* Hover/focus styles for Buy Now and Black buttons */
 .buy-now-button:hover,
@@ -79,12 +62,14 @@ body {
     color: white;
 }
 
+
 /* Outline-style black button */
 .btn-outline-black {
     background: white;
     color: black !important;
     border: 1px solid black;
 }
+
 
 /* Hover/focus styles for outline button */
 .btn-outline-black:hover,
@@ -94,30 +79,34 @@ body {
     color: white !important;
 }
 
+
 /* Force text color to be black */
 .text-black {
     color: #000 !important;
 }
+
 
 /* Add solid black border */
 .border-black {
     border: 1px solid black !important;
 }
 
+
 /* Yellow overlay background behind everything */
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed; /* Fixed in place */
-	background: rgb(240, 207, 76); /* Yellow color */
-	z-index: -1; /* Send it behind other elements */
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed; /* Fixed in place */
+    background: rgb(240, 207, 76); /* Yellow color */
+    z-index: -1; /* Send it behind other elements */
 }
 a.category-badge > span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
 }
+
 
 .btt-button {
     height: 42px;
@@ -127,13 +116,16 @@ a.category-badge > span.badge:hover {
     right: 10px;
 }
 
+
 .btt-link,
 .update-link,
 .remove-item {
     cursor: pointer;
 }
 
+
 /* bootstrap toasts */
+
 
 .message-container {
     position: fixed;
@@ -142,58 +134,70 @@ a.category-badge > span.badge:hover {
     z-index: 99999999999;
 }
 
+
 .custom-toast {
     overflow: visible;
 }
+
 
 .toast-capper {
     height: 2px;
 }
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 
+
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
     right: 36px;
 }
 
+
 /* Convenience classes - colors copied from Bootstrap */
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
 
+
 .arrow-secondary {
     border-bottom-color: #6c757d !important;
 }
+
 
 .arrow-success {
     border-bottom-color: #28a745 !important;
 }
 
+
 .arrow-danger {
     border-bottom-color: #dc3545 !important;
 }
+
 
 .arrow-warning {
     border-bottom-color: #ffc107 !important;
 }
 
+
 .arrow-info {
     border-bottom-color: #17a2b8 !important;
 }
+
 
 .arrow-light {
     border-bottom-color: #f8f9fa !important;
 }
 
+
 .arrow-dark {
     border-bottom-color: #343a40 !important;
 }
+
 
 .bag-notification-wrapper {
     height: 100px;
@@ -201,17 +205,17 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
+
 /* - Media Queries (Responsive Design) */
+
 
 /* Make container wider on extra large screens */
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
-    .content-box {
-    max-width: 1100px; /* Instead of 1200px */
-  }
 }
+
 
 /* Apply fixed top navbar only on medium screens and up */
 @media (min-width: 992px) {
@@ -221,25 +225,11 @@ a.category-badge > span.badge:hover {
         right: 0;
         left: 0;
         z-index: 1030;
-    }\-]== \bgt5] =]0 bgt550[p00hn]
+    }
 
 
     /* Adds spacing below the navbar */
     .header-container {
         padding-top: 164px;
-    }
-}
-@media (max-width: 768px) {
-    .content-box {
-        padding: 20px;
-        margin: 10px auto;
-        width: 95%;
-    }
-}
-
-/* For very small screens */
-@media (max-width: 576px) {
-    .content-box {
-        padding: 15px;
     }
 }
