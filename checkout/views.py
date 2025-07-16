@@ -33,7 +33,13 @@ def checkout(request):
         order_form = OrderForm(form_data)
 
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+
+            # Get Stripe PaymentIntent ID from client_secret
+            client_secret = request.POST.get('client_secret', '')
+            pid = client_secret.split('_secret')[0] if '_secret' in client_secret else ''
+            order.stripe_pid = pid
+            order.save()
 
             for item_id, quantity in bag.items():
                 try:
@@ -47,8 +53,8 @@ def checkout(request):
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
-                    )
+                        "Please call us for assistance!"
+                    ))
                     order.delete()
                     return redirect(reverse('view_bag'))
 
