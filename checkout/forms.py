@@ -1,20 +1,19 @@
-
 from django import forms
 from .models import Order
-
 
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
-                  'street_address1', 'street_address2',
-                  'town_or_city', 'postcode', 'country',
-                  'county',)
+                 'street_address1', 'street_address2',
+                 'town_or_city', 'postcode', 'country',
+                 'county',)
 
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
+        labels and set autofocus on first field.
+        Also handles django-countries field choices conversion.
         """
         super().__init__(*args, **kwargs)
         placeholders = {
@@ -29,12 +28,23 @@ class OrderForm(forms.ModelForm):
             'county': 'County',
         }
 
+        # Special handling for django-countries field
+        if 'country' in self.fields:
+            try:
+                # Convert choices to list and assign to both field and widget
+                country_choices = list(self.fields['country'].choices)
+                self.fields['country'].choices = country_choices
+                self.fields['country'].widget.choices = country_choices
+            except (TypeError, AttributeError):
+                # Fallback in case the choices can't be converted
+                pass
+
         self.fields['full_name'].widget.attrs['autofocus'] = True
-        for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
+        for field_name, field in self.fields.items():
+            if field.required:
+                placeholder = f'{placeholders.get(field_name, "")} *'
             else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False
+                placeholder = placeholders.get(field_name, "")
+            field.widget.attrs['placeholder'] = placeholder
+            field.widget.attrs['class'] = 'stripe-style-input'
+            field.label = False
