@@ -193,6 +193,6 @@ STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_CURRENCY = os.environ.get('STRIPE_CURRENCY', 'eur')
 STANDARD_DELIVERY_PERCENTAGE = 10
-
+DEFAULT_FROM_EMAIL ='ovella@example.com'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
