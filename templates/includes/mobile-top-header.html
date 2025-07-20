@@ -39,7 +39,7 @@
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
                  <!-- Show this only to admin users -->
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Product Management</a>
+                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
             {% endif %}
             <!-- Show these if user is logged in -->
             <a href="" class="dropdown-item">My Profile</a>
