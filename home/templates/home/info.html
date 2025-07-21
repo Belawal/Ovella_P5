@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col text-center">
+            <h1 class="display-4">Info & Contact</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+
+    <!-- Mailchimp Signup Form -->
+    <div class="mb-5">
+        <h3>Subscribe to Our Newsletter</h3>
+        <div id="mc_embed_shell">
+            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+                #mc_embed_signup {
+                    background: #fff;
+                    clear: left;
+                    font: 14px Helvetica, Arial, sans-serif;
+                    width: 100%;
+                    max-width: 600px;
+                    margin: auto;
+                }
+            </style>
+
+            <div id="mc_embed_signup">
+                <form action="https://gmail.us16.list-manage.com/subscribe/post?u=1bf89646f6f7698ed8c18256e&amp;id=bf8bcd66a8&amp;f_id=00c5c2e1f0"
+                    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                    class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                        <h2>Subscribe</h2>
+                        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_1bf89646f6f7698ed8c18256e_bf8bcd66a8" tabindex="-1" value="">
+                        </div>
+                        <div class="optionalParent">
+                            <div class="clear foot">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"
+                                    value="Subscribe">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--  Facebook Link -->
+    <div class="mb-5 text-center">
+        <h3>Follow Us on Facebook</h3>
+        <a href="https://www.facebook.com/OvelaJuices" target="_blank" class="btn btn-primary">
+            Visit Our Facebook Page
+        </a>
+    </div>
+
+    <!-- FAQs -->
+    <div>
+        <h3>Frequently Asked Questions</h3>
+        <ul>
+            <li><strong>Q: What are your store timings?</strong><br>A: 9am to 9pm daily.</li>
+            <li><strong>Q: How long does delivery take?</strong><br>A: 2–3 working days.</li>
+            <li><strong>Q: Do you offer cash on delivery?</strong><br>A: Yes, within major cities.</li>
+        </ul>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">
+    (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = 'EMAIL';
+        ftypes[0] = 'email';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+</script>
+{% endblock %}
