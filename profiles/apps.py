@@ -6,4 +6,4 @@ class ProfilesConfig(AppConfig):
 
     def ready(self):
         
-        from . import signals
+        pass
